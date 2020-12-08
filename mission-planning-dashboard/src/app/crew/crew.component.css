@@ -1,0 +1,14 @@
+h3 {
+  color: #5e1d4c;
+  font-family: 'Audiowide', cursive;
+}
+
+ul {
+  color: #873571;
+  list-style: none;
+  padding: 0;
+}
+
+li::before {
+  content: "🦺 ";
+}

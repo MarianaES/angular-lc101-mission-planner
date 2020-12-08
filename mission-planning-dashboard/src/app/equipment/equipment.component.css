@@ -1,0 +1,14 @@
+h3 {
+  color: #35278c;
+  font-family: 'Audiowide', cursive;
+}
+
+ul {
+  color: #413299;
+  list-style: none;
+  padding: 0;
+}
+
+li::before {
+content: "⚙️ ";
+}
