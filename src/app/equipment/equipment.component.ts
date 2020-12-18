@@ -39,8 +39,23 @@ export class EquipmentComponent implements OnInit {
   // }
 
   addItem(item : object) : boolean {
-    this.cargoHold.push(item);
-    this.cargoMass += item['mass'];
-    return this.maximumAllowedMass - this.cargoMass <= 200;
- }
+    if (!this.maxTwo(item)) {
+      this.cargoHold.push(item);
+      this.cargoMass += item['mass'];
+      return this.maximumAllowedMass - this.cargoMass <= 200;
+    }
+  }
+
+  maxTwo(item: object) : boolean {
+    let count: number = 0;
+
+    this.cargoHold.forEach(cargo => {
+      if (cargo === item && count < 2) {
+        count += 1;
+      }
+    });
+
+    return (count === 2);
+  };
 }
+
